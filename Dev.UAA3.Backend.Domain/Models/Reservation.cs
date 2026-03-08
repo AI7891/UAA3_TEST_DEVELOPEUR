@@ -5,7 +5,9 @@
         public int Id { get; set; }
         public string Name { get; set; } = default!;
         public DateTime DateReserved { get; set; }
+        public int MemberId { get; set; }
         public Member Member { get; set; } = default!;
+        public int RoomId { get; set; }
         public Room Room { get; set; } = default!;
 
         /// <summary>
@@ -21,12 +23,12 @@
         /// <param name="endDate">Date de fin</param>
         /// <param name="member">Membre qui a effectuer la reservation</param>
         /// <param name="room">Salle reservé</param>
-        public Reservation(string name, DateTime dateReserved, Member member, Room room)
+        public Reservation(string name, DateTime dateReserved, int memberId, int roomId)
         {
             Name = name;
             DateReserved = dateReserved;
-            Member = member;
-            Room = room;
+            MemberId = memberId;
+            RoomId = roomId;
         }
 
         /// <summary>
@@ -43,7 +45,9 @@
             Name = name;
             DateReserved = dateReserved;
             Member = member;
+            MemberId = member.Id;
             Room = room;
+            RoomId = room.Id;
         }
     }
 }

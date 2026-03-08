@@ -22,8 +22,4 @@
     <ProjectReference Include="..\Dev.UAA3.Backend.Infrastructure.Database\Dev.UAA3.Backend.Infrastructure.Database.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Dto\Mappers\" />
-  </ItemGroup>
-
 </Project>
