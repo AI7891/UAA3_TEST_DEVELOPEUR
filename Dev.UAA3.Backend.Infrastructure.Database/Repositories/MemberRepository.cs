@@ -21,18 +21,21 @@ namespace Dev.UAA3.Backend.Infrastructure.Database.Repositories
             return new Member(result.Id, result.Email);
         }
 
-        public Member GetByEmail(string email)
+        public Member? GetByEmail(string email)
         {
             var member = _dbContext.Members
                 .Select(m => new { m.Id, m.Email })
-                .Single(m => m.Email == email);
+                .SingleOrDefault(m => m.Email == email);
+
+            if(member is null)
+                return null;
 
             return new Member(member.Id, member.Email);
         }
 
-        public string? GetPasswordHashed(string email)
+        public string GetPasswordHashed(string email)
         {
-            return _dbContext.Members.SingleOrDefault(m => m.Email == email)?.Password;
+            return _dbContext.Members.Single(m => m.Email == email).Password!;
         }
     }
 }

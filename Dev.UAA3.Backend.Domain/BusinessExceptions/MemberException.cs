@@ -11,4 +11,10 @@
         public MemberBadCredentialException()
             : base("Bad credential !") { }
     }
+
+    public class MemberAlreadyExistsException : MemberException
+    {
+        public MemberAlreadyExistsException()
+            : base("Member already exists !") { }
+    }
 }

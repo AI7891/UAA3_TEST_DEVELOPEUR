@@ -17,19 +17,22 @@ namespace Dev.UAA3.Backend.ApplicationCore.Services
 
         public Member Login(string email, string password)
         {
-            string? passwordHashed = _memberRepository.GetPasswordHashed(email);
-
-            if (passwordHashed is null) 
+            Member? member = _memberRepository.GetByEmail(email);
+            if (member is null)
                 throw new MemberBadCredentialException();
-        
+
+            string passwordHashed = _memberRepository.GetPasswordHashed(email);
             if(!Argon2.Verify(passwordHashed, password))
                 throw new MemberBadCredentialException();
 
-            return _memberRepository.GetByEmail(email);
+            return member;
         }
 
         public Member Register(string email, string password)
         {
+            if(_memberRepository.GetByEmail(email) is not null)
+                throw new MemberAlreadyExistsException();
+
             string passwordHashed = Argon2.Hash(password);
 
             Member memberToAdded = new Member(email, passwordHashed);

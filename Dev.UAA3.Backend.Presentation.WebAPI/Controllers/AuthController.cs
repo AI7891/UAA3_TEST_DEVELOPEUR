@@ -3,6 +3,7 @@ using Dev.UAA3.Backend.Domain.Services;
 using Dev.UAA3.Backend.Presentation.WebAPI.Dto.Request;
 using Dev.UAA3.Backend.Presentation.WebAPI.Dto.Response;
 using Dev.UAA3.Backend.Presentation.WebAPI.Tools;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ namespace Dev.UAA3.Backend.Presentation.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthController : ControllerBase
     {
         private readonly IMemberService _memberService;

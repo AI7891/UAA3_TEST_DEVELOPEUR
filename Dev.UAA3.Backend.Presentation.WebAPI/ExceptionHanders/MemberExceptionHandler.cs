@@ -14,8 +14,11 @@ namespace Dev.UAA3.Backend.Presentation.WebAPI.ExceptionHanders
             int statusCode;
             switch (exception)
             {
-                case MemberBadCredentialException badCredntialException:
+                case MemberBadCredentialException:
                     statusCode = StatusCodes.Status422UnprocessableEntity;
+                    break;
+                case MemberAlreadyExistsException:
+                    statusCode = StatusCodes.Status409Conflict;
                     break;
                 default:
                     statusCode = StatusCodes.Status400BadRequest;
