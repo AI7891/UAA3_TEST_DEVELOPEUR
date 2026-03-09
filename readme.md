@@ -17,10 +17,14 @@ Below is a preliminary technical assessment of the requests, the potential imple
 ## 1. Multiple reservations for the same desk
 
 ### Technical analysis
-[Insert explanation of why the issue occurred.]
+The Issue was rooted within the database verification process, the same was found after thorough analisys, having corrected the method (Image below shows the bug already fixed)
+
+-![Alt text](./code.webp) 
+
+which was supposed to correlate the existence of a booking having done in advance against a conferensce room under the same date
 
 ### Impact of the correction
-[Explain what needs to change technically: backend validation, database constraints, API logic, etc.]
+The correction has properly fixed the bug unabling several bookings on the same date to be done against the same conference room
 
 ---
 
