@@ -1,8 +1,8 @@
 # DeskReserve – Client Ticket Analysis
 
 **To:** [Manager / N+1 Name]  
-**From:** [Your Name]  
-**Date:** [Date]  
+**From:** Dennis Push Santillan 
+**Date:** 09/04/2026  
 **Subject:** Technical analysis and impact assessment – DeskReserve client feedback
 
 ---
@@ -31,7 +31,7 @@ The correction has properly fixed the bug unabling several bookings on the same 
 ## 2. Application freeze when cancelling a reservation
 
 ### Technical analysis
-[Explain the cause of the white screen / freeze.]
+
 
 ### Impact of the correction
 [Explain the technical changes required, e.g., frontend state handling, API error handling, React component lifecycle, etc.]
