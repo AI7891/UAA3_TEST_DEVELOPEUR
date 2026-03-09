@@ -1,0 +1,2 @@
+﻿CREATE DATABASE uaa3_dev
+GO

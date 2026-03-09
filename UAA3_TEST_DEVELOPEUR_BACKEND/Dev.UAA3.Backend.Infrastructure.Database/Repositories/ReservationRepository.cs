@@ -36,15 +36,16 @@ namespace Dev.UAA3.Backend.Infrastructure.Database.Repositories
 
         public bool CheckReservationExists(Reservation reservation)
         {
-            return _dbContext.Reservations.Any(r => r.Name == reservation.Name
-                    && r.DateReserved == reservation.DateReserved
-                    && r.MemberId == reservation.MemberId
+            return _dbContext.Reservations.Any(r => r.DateReserved ==   reservation.DateReserved
                     && r.RoomId == reservation.RoomId
             );
         }
 
         public Reservation Insert(Reservation reservation)
         {
+            if (CheckReservationExists(reservation))
+                throw new DbUpdateException("La réservation existe déjà.");
+
             EntityEntry<Reservation> element = _dbContext.Reservations.Add(reservation);
             _dbContext.SaveChanges();
 
