@@ -34,7 +34,7 @@ function ReservationListPageInner({ reservationPromise, onCancel }) {
   };
 
   return (
-    <ul>
+    <ul className="reservation-list">
       {reservations.map(reservation => (
         <li key={reservation.id}>
           <p>{new Date(reservation.dateReserved).toLocaleDateString()}</p>
