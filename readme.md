@@ -32,6 +32,9 @@ The correction has properly fixed the bug unabling several bookings on the same 
 
 ### Technical analysis
 
+The source of the problem was a tricky typo error, basically the method in charge of the cancellation process was attempting to pull the deleted data, triggering a conflict unabling the reservation page to refresh correctly (code source provided below alreade displaying the corrections done)
+
+-![Alt text](./frontend.webp) 
 
 ### Impact of the correction
 [Explain the technical changes required, e.g., frontend state handling, API error handling, React component lifecycle, etc.]
@@ -95,5 +98,5 @@ Please let me know if you would like me to proceed with the proposed corrections
 
 Best regards,
 
-[Your Name]  
-[Your Position]
+Dennis Puch Santillan  
+Junior Dev. at Odoo
